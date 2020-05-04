@@ -1,7 +1,21 @@
 from typing import List
 
 class Solution:
-    # Peak Valley Approach
+    """
+    # Upward Slope Approach - 64ms (Beats 61%)
+    # Runtime: o(n)
+    # Space: o(1)
+    def maxProfit(self, prices: List[int]) -> int:
+        max_profit = 0
+        for i in range(1, len(prices)):
+            if(prices[i] > prices[i - 1]):
+                max_profit += prices[i] - prices[i - 1]
+        return max_profit
+    """
+    
+    # Peak Valley Approach - 60ms (Beats 81%)
+    # Runtime: o(n)
+    # Space: o(1)
     def maxProfit(self, prices: List[int]) -> int:
         i: int = 0
         valley: int = prices[i]
